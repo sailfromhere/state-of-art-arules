@@ -18,6 +18,8 @@ inspect(head(Groceries))
 # using the eclat() function
 frequent_items <- eclat(Groceries)
 inspect(head(frequent_items))
+# plot top10 items
+itemFrequencyPlot(Groceries, topN=10, type="absolute", main="Item Frequency")
 
 # use apriori() function to establishe rules
 rules <- apriori(Groceries, 
