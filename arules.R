@@ -1,6 +1,8 @@
 # install arules package
 install.packages("arules")
+install.packages("arulesViz")
 library(arules)
+library(arulesViz)
 
 # load Groceries data
 data("Groceries")
@@ -51,4 +53,11 @@ wholemilk_rules <- apriori(Groceries,
                              lhs = "whole milk"
                            ))
 inspect(head(wholemilk_rules, by = "confidence"))
+
+# plot top 20 confidence rules
+plot(rules_conf[1:20],
+     method = "graph",
+     control = list(type = "items"))
+
+
 
